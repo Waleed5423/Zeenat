@@ -6,7 +6,7 @@ export default function WhyZeenatPage() {
             <div className="text-center mb-12">
                 <h1 className="text-4xl font-bold mb-2">Why Zeenat is Different</h1>
                 <p className="text-xl text-gray-600">
-                    We're building a marketplace that actually works for women sellers
+                    We&apos;re building a marketplace that actually works for women sellers
                 </p>
             </div>
 
