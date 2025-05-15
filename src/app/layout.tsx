@@ -1,6 +1,7 @@
 import './globals.css'
 import { Poppins, Noto_Nastaliq_Urdu } from 'next/font/google'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className="bg-off-white m-0 p-0">
         <Navbar />
         <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   )

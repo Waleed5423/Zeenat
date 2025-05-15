@@ -1,4 +1,6 @@
+"use client"
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 export default function SolutionCards() {
     const solutions = [
@@ -17,27 +19,52 @@ export default function SolutionCards() {
     ]
 
     return (
-        <section className="space-y-6">
-            <h2 className="text-3xl font-bold text-center text-gray-800">Our Solution</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.section
+            className="space-y-10 py-16 px-4 md:px-8 lg:px-16 bg-white"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ staggerChildren: 0.2 }}
+        >
+            <motion.h2
+                className="text-3xl md:text-4xl font-bold text-center text-gray-800"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+            >
+                Our Solution
+            </motion.h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {solutions.map((solution, index) => (
-                    <div
+                    <motion.div
                         key={index}
-                        className="bg-white p-6 rounded-xl shadow-soft hover-scale transition-all hover:shadow-md"
+                        className="bg-gray-50 border border-gray-100 p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: index * 0.2 }}
                     >
-                        <h3 className="text-xl font-semibold mb-2">{solution.title}</h3>
-                        <p className="text-gray-600 mb-4">{solution.description}</p>
-                    </div>
+                        <h3 className="text-xl font-semibold mb-2 text-gray-800">{solution.title}</h3>
+                        <p className="text-gray-600">{solution.description}</p>
+                    </motion.div>
                 ))}
             </div>
-            <div className="text-center">
+
+            <motion.div
+                className="text-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+            >
                 <Link
                     href="/categories"
-                    className="inline-block px-6 py-3 bg-pink-500 text-white font-medium rounded-lg hover:bg-pink-600 transition-colors"
+                    className="inline-block px-6 py-3 bg-pink-500 text-white font-medium rounded-lg hover:bg-pink-600 transition-colors duration-300"
                 >
                     Explore the Platform
                 </Link>
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
     )
 }
