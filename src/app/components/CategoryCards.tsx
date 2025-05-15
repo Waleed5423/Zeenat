@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { ChevronRight, ChevronLeft } from 'lucide-react'
 import { useRef, useState } from 'react'
 import Image from 'next/image'
+import photo2 from '../assets/photo2.jpg'
 
 export default function CategoryCards() {
     const categories = [
@@ -13,23 +14,23 @@ export default function CategoryCards() {
             topPicks: [
                 {
                     name: 'Embroidered Kurtas',
-                    image: 'https://images.unsplash.com/photo-1595341595379-cf0f2f7b45e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: photo2
                 },
                 {
                     name: 'Handmade Shawls',
-                    image: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1698856287429-d43461bbe2db?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Custom Dresses',
-                    image: 'https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1744742203640-ba59afa94a4d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Traditional Sarees',
-                    image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1717585679395-bbe39b5fb6bc?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Handwoven Scarves',
-                    image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1609803384069-19f3e5a70e75?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 }
             ],
             accentColor: 'indigo-400'
@@ -40,23 +41,23 @@ export default function CategoryCards() {
             topPicks: [
                 {
                     name: 'Handmade Jewelry',
-                    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1523252012848-c22188792c27?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Embroidered Bags',
-                    image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1669578718654-9fb5c15942ef?q=80&w=2003&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Leather Wallets',
-                    image: 'https://images.unsplash.com/photo-1548032885-b5e38734688a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1620109176902-24afe6146cd3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Bamboo Sunglasses',
-                    image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1508296695146-257a814070b4?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Silk Ties',
-                    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1617238749996-ab4c0f9fba57?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 }
             ],
             accentColor: 'amber-400'
@@ -71,11 +72,11 @@ export default function CategoryCards() {
                 },
                 {
                     name: 'Handmade Chocolates',
-                    image: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1592290321458-49b80f943a26?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Gourmet Spices',
-                    image: 'https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1517646458010-ea6bd9f4a75f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Artisan Bread',
@@ -83,7 +84,7 @@ export default function CategoryCards() {
                 },
                 {
                     name: 'Homemade Jam',
-                    image: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1656431157258-3618c14d4b37?q=80&w=2003&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 }
             ],
             accentColor: 'emerald-400'
@@ -94,23 +95,23 @@ export default function CategoryCards() {
             topPicks: [
                 {
                     name: 'Handmade Candles',
-                    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1604249180535-583716d9ec33?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Ceramic Vases',
-                    image: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1721373490515-5341adf543a5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Wooden Sculptures',
-                    image: 'https://images.unsplash.com/photo-1564939558297-fc1f1f30b4a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1727273625443-0b33b58a9a8f?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Woven Baskets',
-                    image: 'https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1691412788407-065354256734?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Macrame Wall Art',
-                    image: 'https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1628415246390-806d42a1f90e?q=80&w=1929&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 }
             ],
             accentColor: 'teal-400'
@@ -121,23 +122,23 @@ export default function CategoryCards() {
             topPicks: [
                 {
                     name: 'Herbal Tea Blends',
-                    image: 'https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1736215900628-5802c4a23db5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Essential Oils',
-                    image: 'https://images.unsplash.com/photo-1601524909160-5e23b5f6b0a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1624454002302-36b824d7bd0a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Natural Soaps',
-                    image: 'https://images.unsplash.com/photo-1604176354204-926165b9c7ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1661450159298-d58a3b98f3a4?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Ayurvedic Creams',
-                    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1637194502327-c99c94943680?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 },
                 {
                     name: 'Aromatherapy Candles',
-                    image: 'https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+                    image: 'https://images.unsplash.com/photo-1690571561842-65bf9a3c173b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 }
             ],
             accentColor: 'rose-400'

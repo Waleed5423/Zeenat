@@ -12,28 +12,28 @@ export default function ComparisonTable() {
                 <tbody className="divide-y divide-gray-100">
                     <tr>
                         <td className="px-6 py-4">Seller Verification</td>
-                        <td className="px-6 py-4">❌</td>
-                        <td className="px-6 py-4 text-green-500">✅</td>
+                        <td className="px-20 py-4 ">❌</td>
+                        <td className="px-10 py-4 text-green-500">✅</td>
                     </tr>
                     <tr>
                         <td className="px-6 py-4">Urdu Support</td>
-                        <td className="px-6 py-4">❌</td>
-                        <td className="px-6 py-4 text-green-500">✅</td>
+                        <td className="px-20 py-4 ">❌</td>
+                        <td className="px-10 py-4 text-green-500">✅</td>
                     </tr>
                     <tr>
                         <td className="px-6 py-4">Women-Only</td>
-                        <td className="px-6 py-4">❌</td>
-                        <td className="px-6 py-4 text-green-500">✅</td>
+                        <td className="px-20 py-4 ">❌</td>
+                        <td className="px-10 py-4 text-green-500">✅</td>
                     </tr>
                     <tr>
                         <td className="px-6 py-4">Anti-Harassment System</td>
-                        <td className="px-6 py-4">❌</td>
-                        <td className="px-6 py-4 text-green-500">✅</td>
+                        <td className="px-20 py-4 ">❌</td>
+                        <td className="px-10 py-4 text-green-500">✅</td>
                     </tr>
                     <tr>
                         <td className="px-6 py-4">Community Space</td>
-                        <td className="px-6 py-4">❌</td>
-                        <td className="px-6 py-4 text-green-500">✅</td>
+                        <td className="px-20 py-4 ">❌</td>
+                        <td className="px-10 py-4 text-green-500">✅</td>
                     </tr>
                 </tbody>
             </table>
