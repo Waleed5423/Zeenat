@@ -2,9 +2,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image';
 
 export default function HeroSection() {
-    const [isLoaded] = useState(true)
 
     return (
         <section className="relative w-full min-h-80 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 overflow-hidden">
@@ -31,12 +31,10 @@ export default function HeroSection() {
 
                 <div className="w-full md:w-1/2 relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 via-purple-900/30 to-transparent z-10"></div>
-
-                    <img
+                    <Image
                         src="https://images.unsplash.com/photo-1617141818496-0ec18b6ab97b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Woman entrepreneur packaging a parcel"
-                        className="w-full h-full object-cover object-left"
-                    />
+                        className="w-full h-full object-cover object-left" />
                 </div>
             </div>
         </section>
