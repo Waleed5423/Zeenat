@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ChevronRight, ChevronLeft } from 'lucide-react'
 import { useRef, useState } from 'react'
+import Image from 'next/image'
 
 export default function CategoryCards() {
     const categories = [
@@ -143,43 +144,65 @@ export default function CategoryCards() {
         }
     ]
 
+    // Create a ref and state for each category
+    const scrollRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const [arrowVisibility, setArrowVisibility] = useState<Array<{
+        showLeft: boolean;
+        showRight: boolean;
+    }>>(categories.map(() => ({ showLeft: false, showRight: true })));
+
+    // Initialize the refs array with null values
+    if (scrollRefs.current.length !== categories.length) {
+        scrollRefs.current = Array(categories.length).fill(null);
+    }
+
+    // Proper ref callback function
+    const setScrollRef = (index: number) => (el: HTMLDivElement | null) => {
+        scrollRefs.current[index] = el;
+    };
+
+    const scroll = (direction: 'left' | 'right', index: number) => {
+        const scrollRef = scrollRefs.current[index];
+        if (!scrollRef) return;
+
+        const { clientWidth } = scrollRef;
+        const scrollAmount = direction === 'left' ? -clientWidth : clientWidth;
+
+        scrollRef.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+
+        // Update arrow visibility after scroll completes
+        setTimeout(() => {
+            updateArrowVisibility(index);
+        }, 500);
+    }
+
+    const updateArrowVisibility = (index: number) => {
+        const scrollRef = scrollRefs.current[index];
+        if (!scrollRef) return;
+
+        const { scrollLeft, clientWidth, scrollWidth } = scrollRef;
+        setArrowVisibility(prev => {
+            const newVisibility = [...prev];
+            newVisibility[index] = {
+                showLeft: scrollLeft > 0,
+                showRight: scrollLeft + clientWidth < scrollWidth
+            };
+            return newVisibility;
+        });
+    }
+
+    const handleScroll = (index: number) => {
+        updateArrowVisibility(index);
+    }
+
+
     return (
         <div className="space-y-8 p-4 md:p-6 w-full max-w-7xl mx-auto">
             {categories.map((category, index) => {
-                const scrollRef = useRef<HTMLDivElement>(null)
-                const [showLeftArrow, setShowLeftArrow] = useState(false)
-                const [showRightArrow, setShowRightArrow] = useState(true)
-
-                const scroll = (direction: 'left' | 'right') => {
-                    if (!scrollRef.current) return
-
-                    const { scrollLeft, clientWidth, scrollWidth } = scrollRef.current
-                    const scrollAmount = direction === 'left' ? -clientWidth : clientWidth
-
-                    scrollRef.current.scrollBy({
-                        left: scrollAmount,
-                        behavior: 'smooth'
-                    })
-
-                    // Update arrow visibility after scroll completes
-                    setTimeout(() => {
-                        if (!scrollRef.current) return
-                        const newScrollLeft = scrollRef.current.scrollLeft
-                        const newClientWidth = scrollRef.current.clientWidth
-                        const newScrollWidth = scrollRef.current.scrollWidth
-
-                        setShowLeftArrow(newScrollLeft > 0)
-                        setShowRightArrow(newScrollLeft + newClientWidth < newScrollWidth)
-                    }, 500)
-                }
-
-                const handleScroll = () => {
-                    if (!scrollRef.current) return
-                    const { scrollLeft, clientWidth, scrollWidth } = scrollRef.current
-
-                    setShowLeftArrow(scrollLeft > 0)
-                    setShowRightArrow(scrollLeft + clientWidth < scrollWidth)
-                }
+                const { showLeft, showRight } = arrowVisibility[index];
 
                 return (
                     <motion.div
@@ -275,9 +298,9 @@ export default function CategoryCards() {
 
                             <div className="relative">
                                 <div
-                                    ref={scrollRef}
+                                    ref={setScrollRef(index)}
                                     className="flex space-x-4 md:space-x-8 overflow-x-hidden pb-6 scrollbar-hide px-2"
-                                    onScroll={handleScroll}
+                                    onScroll={() => handleScroll(index)}
                                 >
                                     {category.topPicks.map((item, i) => (
                                         <motion.div
@@ -299,9 +322,11 @@ export default function CategoryCards() {
                                                 whileHover={{ scale: 1.05 }}
                                                 whileTap={{ scale: 0.95 }}
                                             >
-                                                <img
+                                                <Image
                                                     src={item.image}
                                                     alt={item.name}
+                                                    width={208}
+                                                    height={208}
                                                     className="w-40 h-40 md:w-52 md:h-52 object-cover"
                                                 />
                                                 <motion.div
@@ -322,7 +347,7 @@ export default function CategoryCards() {
                                 </div>
 
                                 {/* Navigation arrows with Lucide icons */}
-                                {showLeftArrow && (
+                                {showLeft && (
                                     <motion.button
                                         className="absolute left-2 top-1/2 -translate-y-1/2 bg-white p-2 md:p-3 rounded-full shadow-lg z-20 hover:shadow-xl transition-all"
                                         whileHover={{
@@ -330,7 +355,7 @@ export default function CategoryCards() {
                                             backgroundColor: 'bg-indigo-100'
                                         }}
                                         whileTap={{ scale: 0.9 }}
-                                        onClick={() => scroll('left')}
+                                        onClick={() => scroll('left', index)}
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                     >
@@ -340,7 +365,7 @@ export default function CategoryCards() {
                                         />
                                     </motion.button>
                                 )}
-                                {showRightArrow && (
+                                {showRight && (
                                     <motion.button
                                         className="absolute right-2 top-1/2 -translate-y-1/2 bg-white p-2 md:p-3 rounded-full shadow-lg z-20 hover:shadow-xl transition-all"
                                         whileHover={{
@@ -348,7 +373,7 @@ export default function CategoryCards() {
                                             backgroundColor: 'bg-indigo-100'
                                         }}
                                         whileTap={{ scale: 0.9 }}
-                                        onClick={() => scroll('right')}
+                                        onClick={() => scroll('right', index)}
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                     >
