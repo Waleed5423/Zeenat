@@ -1,4 +1,4 @@
-import CategoryCards  from "@/app/components/CategoryCards"
+import CategoryCards from "@/app/components/CategoryCards"
 
 
 export default function CategoriesPage() {
