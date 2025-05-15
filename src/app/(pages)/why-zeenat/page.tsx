@@ -6,7 +6,7 @@ export default function WhyZeenatPage() {
             <div className="text-center mb-12">
                 <h1 className="text-4xl font-bold mb-2">Why Zeenat is Different</h1>
                 <p className="text-xl text-gray-600">
-                    We're building a marketplace that actually works for women sellers
+                    We&apos;re building a marketplace that actually works for women sellers
                 </p>
             </div>
 
@@ -15,12 +15,12 @@ export default function WhyZeenatPage() {
             {/* About Us Section with enhanced UI */}
             <div className="mt-16 bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl p-8 shadow-sm">
                 <div className="max-w-3xl mx-auto">
-                    <h2 className="text-3xl font-bold text-center mb-6 text-pink-600">Pakistan's First Women-Only Marketplace</h2>
+                    <h2 className="text-3xl font-bold text-center mb-6 text-pink-600">Pakistan&apos;s First Women-Only Marketplace</h2>
 
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                         <div>
                             <p className="text-lg text-gray-700 mb-4">
-                                Zeenat is Pakistan's first of its kind, verified, women-only marketplace. Built specifically for female entrepreneurs who want to take their businesses online in a safe, harassment-free environment.
+                                Zeenat is Pakistan&apos;s first of its kind, verified, women-only marketplace. Built specifically for female entrepreneurs who want to take their businesses online in a safe, harassment-free environment.
                             </p>
                             <p className="text-lg text-gray-700 mb-4">
                                 We provide a platform that works in your own language, with features designed to empower women in e-commerce.
